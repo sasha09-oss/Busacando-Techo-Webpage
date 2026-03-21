@@ -380,6 +380,12 @@ animation-iteration-count: 1 !important;
 transition-duration: 0.01ms !important;
 }
 }
+@media (max-width: 768px) {
+.map-btn {
+font-size: 9px;
+padding: 6px 8px;
+}
+}
 :focus-visible {
 outline: 3px solid var(--accent);
 outline-offset: 2px;
@@ -578,7 +584,7 @@ Desde apartamentos compactos hasta casas familiares amplias. Garantizamos que cu
 <p class="text-sm" style="color: var(--fg-muted)">Ventas en los últimos 30 días</p>
 </div>
 <div class="reveal text-center p-8 rounded-2xl" style="background: var(--card); box-shadow: 0 4px 20px rgba(45, 49, 66, 0.08); transition-delay: 0.3s">
-<div class="metric-value" id="metric-available">45</div>
+<div class="metric-value" id="metric-available">0</div>
 <p class="text-lg font-semibold mt-2" style="color: var(--fg)">Disponibles</p>
 <p class="text-sm" style="color: var(--fg-muted)">Propiedades en oferta</p>
 </div>
@@ -598,24 +604,23 @@ Desde apartamentos compactos hasta casas familiares amplias. Garantizamos que cu
 <div class="map-container">
 <img src="assets/images/mapa-habana.jpg"
 alt="Mapa de Municipios de La Habana"
-class="rounded-2xl"
-onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/4/4e/Mapa_Habana.png'">
+class="rounded-2xl">
 <!-- Municipality Buttons positioned over map -->
-<button class="map-btn" data-municipality="Playa" data-count="0" style="top: 12%; left: 8%;">Playa</button>
-<button class="map-btn" data-municipality="Plaza de la Revolucion" data-count="0" style="top: 20%; left: 20%;">Plaza de la Rev.</button>
-<button class="map-btn" data-municipality="La Habana Vieja" data-count="0" style="top: 18%; left: 38%;">Habana Vieja</button>
-<button class="map-btn" data-municipality="Habana del Este" data-count="0" style="top: 15%; left: 65%;">Habana del Este</button>
-<button class="map-btn" data-municipality="Marianao" data-count="0" style="top: 32%; left: 10%;">Marianao</button>
-<button class="map-btn" data-municipality="Centro Habana" data-count="0" style="top: 28%; left: 32%;">Centro Habana</button>
-<button class="map-btn" data-municipality="Cerro" data-count="0" style="top: 40%; left: 25%;">Cerro</button>
-<button class="map-btn" data-municipality="Diez de Octubre" data-count="0" style="top: 38%; left: 42%;">10 de Octubre</button>
-<button class="map-btn" data-municipality="San Miguel del Padron" data-count="0" style="top: 35%; left: 55%;">San Miguel</button>
-<button class="map-btn" data-municipality="La Lisa" data-count="0" style="top: 52%; left: 8%;">La Lisa</button>
-<button class="map-btn" data-municipality="Boyeros" data-count="0" style="top: 55%; left: 22%;">Boyeros</button>
-<button class="map-btn" data-municipality="Arroyo Naranjo" data-count="0" style="top: 50%; left: 38%;">Arroyo Naranjo</button>
-<button class="map-btn" data-municipality="Cotorro" data-count="0" style="top: 68%; left: 48%;">Cotorro</button>
-<button class="map-btn" data-municipality="Regla" data-count="0" style="top: 42%; left: 60%;">Regla</button>
-<button class="map-btn" data-municipality="Guanabacoa" data-count="0" style="top: 52%; left: 68%;">Guanabacoa</button>
+<button class="map-btn" data-municipality="Playa" data-count="0" style="top: 28%; left: 12%;">Playa</button>
+<button class="map-btn" data-municipality="La Lisa" data-count="0" style="top: 48%; left: 10%;">La Lisa</button>
+<button class="map-btn" data-municipality="Marianao" data-count="0" style="top: 35%; left: 20%;">Marianao</button>
+<button class="map-btn" data-municipality="Plaza de la Revolucion" data-count="0" style="top: 20%; left: 35%;">Plaza Rev.</button>
+<button class="map-btn" data-municipality="La Habana Vieja" data-count="0" style="top: 18%; left: 42%;">Habana Vieja</button>
+<button class="map-btn" data-municipality="Centro Habana" data-count="0" style="top: 25%; left: 38%;">Centro Habana</button>
+<button class="map-btn" data-municipality="Cerro" data-count="0" style="top: 32%; left: 35%;">Cerro</button>
+<button class="map-btn" data-municipality="Diez de Octubre" data-count="0" style="top: 35%; left: 45%;">10 de Octubre</button>
+<button class="map-btn" data-municipality="Regla" data-count="0" style="top: 15%; left: 52%;">Regla</button>
+<button class="map-btn" data-municipality="Habana del Este" data-count="0" style="top: 12%; left: 68%;">Habana del Este</button>
+<button class="map-btn" data-municipality="San Miguel del Padron" data-count="0" style="top: 38%; left: 55%;">San Miguel</button>
+<button class="map-btn" data-municipality="Arroyo Naranjo" data-count="0" style="top: 48%; left: 38%;">Arroyo Naranjo</button>
+<button class="map-btn" data-municipality="Boyeros" data-count="0" style="top: 58%; left: 25%;">Boyeros</button>
+<button class="map-btn" data-municipality="Cotorro" data-count="0" style="top: 52%; left: 58%;">Cotorro</button>
+<button class="map-btn" data-municipality="Guanabacoa" data-count="0" style="top: 35%; left: 62%;">Guanabacoa</button>
 </div>
 <!-- Selected Municipality Info -->
 <div id="map-info" class="mt-6 text-center p-4 rounded-xl hidden" style="background: var(--cream)">
@@ -857,7 +862,7 @@ Estamos disponibles en múltiples plataformas. Elige la forma más cómoda de co
 </div>
 <span class="font-bold" style="color: var(--fg)">Buscando Techo</span>
 </div>
-<p class="text-sm" style="color: var(--fg-muted)">2026 Buscando Techo. Todos los derechos reservados.</p>
+<p class="text-sm" style="color: var(--fg-muted)">2024 Buscando Techo. Todos los derechos reservados.</p>
 </div>
 </div>
 </footer>
@@ -875,7 +880,7 @@ let properties = [];
 let metrics = {
 total: 22,
 month: 8,
-available: 45
+available: 0
 };
 let selectedMunicipality = null;
 
@@ -1133,16 +1138,16 @@ const content = document.getElementById('detail-content');
 // Build photo gallery
 let galleryHTML = '';
 if (prop.photos && prop.photos.length > 1) {
-galleryHTML = '<div class="property-gallery">' + 
-prop.photos.slice(0, 4).map(photo => 
-`<img src="${photo}" onclick="showFullImage('${photo}')" onerror="this.src='https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=400&fit=crop'">`
-).join('') + 
+galleryHTML = '<div class="property-gallery">' +
+prop.photos.slice(0, 4).map(photo =>
+`<img src="${photo}" onerror="this.src='https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=400&fit=crop'">`
+).join('') +
 '</div>';
 }
 
 content.innerHTML = `
 <div class="relative">
-<img src="${prop.photos[0]}" alt="${prop.headline}" class="w-full h-64 object-cover" onerror="this.src='https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=400&fit=crop'">
+<img src="${prop.photos[0]}" alt="${prop.headline}" class="w-full h-64 object-cover" onerror="this.src='https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop'">
 <button onclick="closeDetailModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center" aria-label="Cerrar">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 <line x1="18" y1="6" x2="6" y2="18"/>
